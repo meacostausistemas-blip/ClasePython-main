@@ -1,0 +1,7 @@
+salario = float(input("Ingresa tu salario mensual: "))
+deuda = input("¿Tienes deudas? (sí/no): ").lower()
+
+if salario > 1000 and deuda == "no":
+    print("Crédito Aprobado")
+else:
+    print("Crédito Denegado")

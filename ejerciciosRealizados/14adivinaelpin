@@ -1,0 +1,5 @@
+pin_secreto = "1234"
+pin = ""
+while pin != pin_secreto:
+    pin = input("Ingresa el PIN: ")
+print("Acceso concedido")

@@ -1,0 +1,6 @@
+n = int(input("Ingresa un número entero positivo: "))
+while n >= 0:
+    print(n)
+    n -= 1
+print("¡Despegue!")
+

@@ -1,0 +1,11 @@
+total = 0
+precio = -1
+
+while precio != 0:
+    precio = float(input("Ingresa el precio del producto (0 para terminar): "))
+    total += precio
+
+if total > 100:
+    total *= 0.90  # Aplica 10% de descuento
+
+print(f"Total a pagar: ${total:.2f}")

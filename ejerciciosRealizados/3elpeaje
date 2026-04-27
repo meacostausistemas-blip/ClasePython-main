@@ -1,0 +1,6 @@
+# 3. El peaje
+edad = int(input("¿Cuál es tu edad? "))
+if edad >= 18:
+    print("Puedes conducir")
+else:
+    print("Aún no tienes edad para conducir")

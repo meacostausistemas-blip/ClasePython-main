@@ -1,0 +1,37 @@
+# 1. El saludo personalizado
+nombre = input("¿Cuál es tu nombre? ")
+edad = int(input("¿Cuál es tu edad? "))
+anio_actual = 2026
+anio_nacimiento = anio_actual - edad
+print(f"Bienvenido {nombre}, naciste aproximadamente en {anio_nacimiento}.")
+
+# 2. Par o Impar
+num = int(input("Ingresa un número entero: "))
+if num % 2 == 0:
+    print("Es par")
+else:
+    print("Es impar")
+
+# 3. El peaje
+edad = int(input("¿Cuál es tu edad? "))
+if edad >= 18:
+    print("Puedes conducir")
+else:
+    print("Aún no tienes edad para conducir")
+
+# 4. El mayor de dos
+a = int(input("Ingresa el primer número: "))
+b = int(input("Ingresa el segundo número: "))
+if a > b:
+    print(f"El mayor es {a}")
+else:
+    print(f"El mayor es {b}")
+
+# 5. Positivo, negativo o cero
+num = int(input("Ingresa un número: "))
+if num > 0:
+    print("Positivo")
+elif num < 0:
+    print("Negativo")
+else:
+    print("Cero")

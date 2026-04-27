@@ -1,0 +1,7 @@
+# 4. El mayor de dos
+a = int(input("Ingresa el primer número: "))
+b = int(input("Ingresa el segundo número: "))
+if a > b:
+    print(f"El mayor es {a}")
+else:
+    print(f"El mayor es {b}")
