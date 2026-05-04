@@ -1,0 +1,133 @@
+'''
+Enunciado del Ejercicio: Geometría con Bucles (Arte ASCII)
+
+Objetivo: Desarrollar la lógica de programación y el manejo de bucles anidados (for o while) para representar figuras 
+geométricas bidimensionales en la terminal utilizando caracteres (como *, + o #).
+
+Descripción de la Tarea
+
+Debes crear un programa que, al ejecutarse, imprima de forma clara las siguientes cinco figuras. El usuario debería poder 
+definir el tamaño (lado, radio o altura) de las figuras antes de imprimirlas.
+
+Figuras Requeridas:
+	1.	Triángulo Rectángulo: El programa debe imprimir un triángulo alineado a la izquierda.
+	2.	Cuadrado: Una representación con la misma cantidad de filas y columnas.
+	3.	Rectángulo: Donde la base sea visiblemente mayor a la altura (ejemplo: proporción 2:1).
+	4.	Círculo: (Reto de lógica) Utiliza la ecuación del círculo o una aproximación de distancia de puntos para dibujar 
+        una forma redondeada.
+	5.	Pentágono: Una figura de 5 lados (puedes combinar un triángulo sobre un trapecio o rectángulo).
+
+Requerimientos Técnicos
+•	Visualización: Crear un menú que permita elegir la figura a imprimir.
+•	Interactividad: El programa debe preguntar al usuario: "Ingrese el tamaño para sus figuras:".
+•	Estructura: Utiliza bucles anidados. El bucle externo controlará las filas (eje Y y el interno las columnas (eje X).
+•	Presentación: Cada figura debe estar separada por un título y un espacio en blanco para que sea legible.
+
+Ejemplo de Salida Esperada (Tamaño 5)
+
+--- CUADRADO ---
+# # # # #
+# # # # #
+# # # # #
+# # # # #
+# # # # #
+
+--- RECTÁNGULO (5x10) ---
+# # # # # # # # # #
+# # # # # # # # # #
+# # # # # # # # # #
+# # # # # # # # # #
+# # # # # # # # # #
+
+--- TRIÁNGULO ---
+# 
+# # 
+# # # 
+# # # # 
+# # # # #
+
+--- CÍRCULO (Radio 5) ---
+      # # # #      
+    # # # # # #    
+  # # # # # # # #  
+  # # # # # # # #  
+    # # # # # #    
+      # # # #      
+
+--- PENTÁGONO ---
+      #      
+    # # #    
+  # # # # #  
+  # # # # #  
+  # # # # #  
+
+  Solución del Ejercicio Propuesto 
+'''
+import math
+
+def cuadrado(n):
+    print("\n--- CUADRADO ---")
+    for i in range(n):
+        for j in range(n):
+            print("#", end=" ")
+        print()
+
+def rectangulo(n):
+    print(f"\n--- RECTÁNGULO ({n}x{2*n}) ---")
+    for i in range(n):
+        for j in range(2*n):
+            print("#", end=" ")
+        print()
+
+def triangulo(n):
+    print("\n--- TRIÁNGULO ---")
+    for i in range(1, n+1):
+        for j in range(i):
+            print("#", end=" ")
+        print()
+
+def circulo(r):
+    print(f"\n--- CÍRCULO (Radio {r}) ---")
+    for i in range(-r, r+1):
+        for j in range(-r, r+1):
+            if i**2 + j**2 <= r**2:
+                print("#", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+def pentagono(n):
+    print("\n--- PENTÁGONO ---")
+    # Parte superior (triángulo)
+    for i in range(n):
+        print(" " * (n-i) + "# " * (i+1))
+    # Parte inferior (rectángulo/trapecio)
+    for i in range(n):
+        print("# " * (n+2))
+
+def menu():
+    print("\nSeleccione la figura a imprimir:")
+    print("1. Triángulo Rectángulo")
+    print("2. Cuadrado")
+    print("3. Rectángulo")
+    print("4. Círculo")
+    print("5. Pentágono")
+
+    opcion = int(input("Ingrese el número de la figura: "))
+    tamaño = int(input("Ingrese el tamaño para sus figuras: "))
+
+    if opcion == 1:
+        triangulo(tamaño)
+    elif opcion == 2:
+        cuadrado(tamaño)
+    elif opcion == 3:
+        rectangulo(tamaño)
+    elif opcion == 4:
+        circulo(tamaño)
+    elif opcion == 5:
+        pentagono(tamaño)
+    else:
+        print("Opción inválida.")
+
+# Programa principal
+menu()
